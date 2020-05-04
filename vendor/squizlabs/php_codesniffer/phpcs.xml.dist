@@ -21,11 +21,14 @@
         <type>error</type>
     </rule>
 
+
     <!-- Include the whole PEAR standard -->
     <rule ref="PEAR">
         <exclude name="PEAR.NamingConventions.ValidFunctionName"/>
         <exclude name="PEAR.NamingConventions.ValidVariableName"/>
-        <exclude name="PEAR.Commenting.ClassComment"/>
+         <exclude name="PEAR.Commenting.ClassComment"/> 
+        <exclude name="PEAR.Commenting.FileComment.Missing"/>
+        <exclude name="PEAR.Commenting.FunctionComment.Missing"/>
         <exclude name="PEAR.Commenting.FileComment.MissingCategoryTag"/>
         <exclude name="PEAR.Commenting.FileComment.MissingPackageTag"/>
         <exclude name="PEAR.Commenting.FileComment.MissingLinkTag"/>
@@ -33,10 +36,12 @@
         <exclude name="PEAR.Commenting.InlineComment"/>
     </rule>
 
+    
+
     <!-- Include some sniffs from other standards that don't conflict with PEAR -->
     <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
     <rule ref="Squiz.Arrays.ArrayDeclaration"/>
-    <rule ref="Squiz.Commenting.ClosingDeclarationComment"/>
+    <!-- <rule ref="Squiz.Commenting.ClosingDeclarationComment"/> -->
     <rule ref="Squiz.ControlStructures.ControlSignature"/>
     <rule ref="Squiz.ControlStructures.ElseIfDeclaration"/>
     <rule ref="Squiz.Commenting.BlockComment"/>
@@ -59,7 +64,7 @@
     <rule ref="Squiz.WhiteSpace.OperatorSpacing"/>
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
     <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
-    <rule ref="Generic.Commenting.Todo"/>
+    <!--<rule ref="Generic.Commenting.Todo"/> --> 
     <rule ref="Generic.ControlStructures.DisallowYodaConditions"/>
     <rule ref="Generic.ControlStructures.InlineControlStructure"/>
     <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
@@ -74,6 +79,13 @@
     <rule ref="PSR2.Files.EndFileNewline"/>
     <rule ref="PSR12.Files.OpenTag"/>
     <rule ref="Zend.Files.ClosingTag"/>
+
+    <!--Change end of line the standard should check for  -->
+    <rule ref="Generic.Files.LineEndings">
+  <properties>
+   <property name="eolChar" value="\r\n"/>
+  </properties>
+ </rule>
 
     <!-- PEAR uses warnings for inline control structures, so switch back to errors -->
     <rule ref="Generic.ControlStructures.InlineControlStructure">
